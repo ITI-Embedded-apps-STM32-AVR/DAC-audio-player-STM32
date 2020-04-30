@@ -4114,16 +4114,15 @@ unsigned int bit8_raw_len = 48390;
 
  void dac_song_cb(u32 val)
  {
-	 (void)val; /* prevent compiler warning (acknowledge it's an unsed variale) */
+   (void)val; /* prevent compiler warning (acknowledge it's an unsed variale) */
 
-	 static u16 i = 0;
+   static u16 i = 0;
 
-	 DAC_WriteValue(0, chipex_song[i]);
+   DAC_WriteValue(0, chipex_song[i]);
 
-	 i++;
-	 if (i == (sizeof(chipex_song)/sizeof(chipex_song[0])))
-	 {
-		 i = 0;
-	 }
-
+   i++;
+   if (i == (sizeof(chipex_song)/sizeof(chipex_song[0])))
+   {
+      i = 0;
+   }
  }
